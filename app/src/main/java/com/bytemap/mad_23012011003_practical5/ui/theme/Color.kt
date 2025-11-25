@@ -1,4 +1,4 @@
-package com.bytemap.mad_23012011026_practical5.ui.theme
+package com.bytemap.mad_23012011003_practical5.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

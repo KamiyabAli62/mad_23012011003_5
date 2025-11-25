@@ -1,4 +1,4 @@
-package com.bytemap.mad_23012011026_practical5.screen.components
+package com.bytemap.mad_23012011003_practical5.screen.components
 
 
 import androidx.compose.foundation.layout.Row
@@ -16,7 +16,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bytemap.mad_23012011026_practical5.ui.theme.Pactical5Theme
+import com.bytemap.mad_23012011003_practical5.ui.theme.Pactical5Theme
 
 @Composable
 fun FormField(label : String, textState : String,

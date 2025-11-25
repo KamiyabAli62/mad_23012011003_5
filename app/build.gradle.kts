@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.bytemap.mad_23012011026_practical5"
+    namespace = "com.bytemap.mad_23012011003_practical5"
     compileSdk = 36
 
     defaultConfig {

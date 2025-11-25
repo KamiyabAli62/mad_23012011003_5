@@ -1,8 +1,6 @@
-package com.bytemap.mad_23012011026_practical5.screen.components
+package com.bytemap.mad_23012011003_practical5.screen.components
 
-import android.content.Context
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +13,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -28,35 +25,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.bytemap.mad_23012011026_practical5.R
-import com.bytemap.mad_23012011026_practical5.ui.theme.Pink80
-
-
-@Composable
-fun LoginScreen(context: Context, navController: NavController) {
-    Scaffold (modifier = Modifier.fillMaxSize()){
-        innerPadding ->
-        Box(modifier = Modifier.fillMaxSize().padding(innerPadding)){
-            LoginUI(navController = navController)
-        }
-    }
-}
-
-fun navigateToRegisterScreen(navController: NavController) {
-    navController.navigate("register")
-}
+import com.bytemap.mad_23012011003_practical5.R
+import com.bytemap.mad_23012011003_practical5.ui.theme.Pink80
 
 @Composable
-fun LoginUI(navController:  NavController?= null) {
+fun RegisterUI(navController: NavController? = null) {
+    var name by remember { mutableStateOf("") }
+    var phoneNumber by remember { mutableStateOf("") }
+    var city by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    var confirmPassword by remember { mutableStateOf("") }
+
     Column(modifier = Modifier
         .fillMaxSize()
         .padding(20.dp)) {
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         Image(
             painter = painterResource(R.drawable.guni_pink_logo),
             contentDescription = "Guni Pink Logo",
@@ -75,18 +63,27 @@ fun LoginUI(navController:  NavController?= null) {
                 .padding(20.dp))
             {
                 FormField(
-                    label = "Email", textState = email,
-                    onTextChange = { email = it })
+                    label = "Name", textState = name,
+                    onTextChange = { name = it })
+                FormField(
+                    label = "Phone Number", textState = phoneNumber,
+                    onTextChange = { phoneNumber = it }
+                )
+                FormField(
+                    label = "City", textState = city,
+                    onTextChange = { city = it }
+                )
+                FormField(
+                    label = "email", textState = email,
+                    onTextChange = { email = it }
+                )
                 FormField(
                     label = "Password", textState = password,
-                    onTextChange = { password = it }, isPasswordField = true
+                    onTextChange = { password = it }
                 )
-                Text(
-                    text = "Forgot Password?",
-                    fontSize = 18.sp,
-                    modifier = Modifier
-                        .padding(bottom = 50.dp)
-                        .align(Alignment.End)
+                FormField(
+                    label = "Confirm Password", textState = confirmPassword,
+                    onTextChange = { confirmPassword = it }
                 )
 
                 Button(onClick = {
@@ -95,22 +92,28 @@ fun LoginUI(navController:  NavController?= null) {
                     .fillMaxWidth()
                     .align(Alignment.CenterHorizontally))
                 {
-                    Text("Login", fontSize = 18.sp)
+                    Text("Register", fontSize = 18.sp)
                 }
             }
         }
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Row(
             modifier = Modifier.align(Alignment.CenterHorizontally),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "Don't have an account?", fontSize = 16.sp)
+            Text(text = "Do you have an account?", fontSize = 16.sp)
             Spacer(modifier = Modifier.width(5.dp))
             TextButton(onClick = {
-                navController?.navigate("register")
+                navController?.navigate("login")
             }) {
-                Text("SIGN UP", color = Pink80, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                Text("LOGIN", color = Pink80, fontSize = 18.sp, fontWeight = FontWeight.Bold)
             }
         }
     }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun RegisterActivityPreview() {
+    RegisterUI()
 }

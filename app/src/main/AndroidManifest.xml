@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.bytemap.mad_23012011026_practical5">
+    package="com.bytemap.mad_23012011003_practical5">
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pactical5">
         <activity
-            android:name=".MainActivity"
+            android:name="com.bytemap.mad_23012011003_practical5.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Pactical5">

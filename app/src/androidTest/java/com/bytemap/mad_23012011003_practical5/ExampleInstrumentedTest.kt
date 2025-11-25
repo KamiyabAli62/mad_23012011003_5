@@ -1,4 +1,4 @@
-package com.bytemap.mad_23012011026_practical5
+package com.bytemap.mad_23012011003_practical5
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
